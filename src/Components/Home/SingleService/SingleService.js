@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const SingleService = ({singleService}) => {
   return (
@@ -14,7 +15,7 @@ const SingleService = ({singleService}) => {
       <div className="card-footer">
         <h3 className="text-success" style={{margin:'0'}}>{singleService.serviceDescription}</h3>
         <div className="text-end">
-        <button className="btn btn-success">Place an Order</button>
+        <Link to={`/placeorder/${singleService._id}`} ><button className="btn btn-success">Place an Order</button></Link>
         </div>
       </div>
     </div>

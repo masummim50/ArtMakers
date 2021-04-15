@@ -14,6 +14,7 @@ const Sidebar = () => {
           <div className="mb-3"><Link className="text-white text-decoration-none" to={`${url}/addadmin`}>Add Admin</Link></div>
           <div className="mb-3"><Link className="text-white text-decoration-none" to={`${url}/myorders`}>My Orders</Link></div>
           <div className="mb-3"><Link className="text-white text-decoration-none" to={`${url}/allorders`}>All Orders</Link></div>
+          <div className="mb-3"><Link className="text-white text-decoration-none" to={`${url}/pay`}>pay</Link></div>
         </div>
         <div className="logout p-5">
           <button className="btn btn-info">Logout</button>
