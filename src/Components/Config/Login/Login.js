@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import firebase from "firebase/app";
 import "firebase/auth";
 import Navbar from '../../Shared/Navbar/Navbar';
@@ -10,18 +10,22 @@ const Login = () => {
   if(firebase.apps.length === 0){
     firebase.initializeApp(firebaseConfig);
   }
+  useEffect(()=> {
+    fetch('http://localhost:5000/admins')
+    .then(res => res.json())
+    .then(data => setAdmin(data))
+  },[])
   const history = useHistory();
   const location = useLocation();
   const {from} = location.state || {from: {pathname: '/'}}
-  const [loggedInUser, setLoggedInUser] = useContext(userContext);
+  const [loggedInUser, setLoggedInUser, admin, setAdmin] = useContext(userContext);
   const provider = new firebase.auth.GoogleAuthProvider();
   const handleGoogleSignIn =()=> {
         firebase.auth()
       .signInWithPopup(provider)
       .then((result) => {
-        console.log(result);
         setLoggedInUser(result.user)
-        history.replace(from)
+        history.replace(from);
       }).catch((error) => {
         console.log(error)
       });

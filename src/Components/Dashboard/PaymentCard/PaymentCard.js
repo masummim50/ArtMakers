@@ -15,7 +15,7 @@ const stripePromise = loadStripe("pk_test_6pRNASCoBOKtIshFeQd4XMUh");
 
 const PaymentCard = ({order}) => {
   return (
-    <div className="p-5">
+    <div style={{display:'none'}} className="p-5" id="payment-card">
       
     <BrowserRouter>
       <Elements stripe={stripePromise}>

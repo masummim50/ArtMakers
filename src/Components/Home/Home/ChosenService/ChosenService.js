@@ -19,16 +19,22 @@ const ChosenService = () => {
     })
   },[])
   const handleOrderSubmit = ()=> {
+    const buyerDemands= document.getElementById('customer-description').value;
+    if(buyerDemands){
     const newOrder = {
       orderType: chosenservice.serviceTitle,
       orderCost: chosenservice.price,
-      buyerDemands: document.getElementById('customer-description').value,
+      buyerDemands: buyerDemands,
       buyerName: loggedInUser.displayName,
       buyerEmail: loggedInUser.email
     }
     console.log(newOrder)
     setOrder(newOrder)
     setNextStep(true)
+    document.getElementById('payment-card').style.display = 'block'
+  }else{
+    return false;
+  }
   }
   return (
     <div>
@@ -36,7 +42,7 @@ const ChosenService = () => {
       <div className="row">
         <div className="col-md-6 p-5">
           <h2>Your chosen service is {chosenservice.serviceTitle}</h2>
-          <p>Describe what you want as best as you can, include any references you might have. For photographic reference you can leave a google drive link. </p>
+          <p>Describe what you want as best as you can, include any references you might have. For photographic reference you can leave a google drive link.</p> <h4 className="text-info"> Submit to see payment options </h4>
           <textarea name="" id="customer-description" style={{width:'100%'}} rows="5" placeholder='Description'></textarea>
           <button onClick={handleOrderSubmit} className="btn btn-info">Submit</button>
           {

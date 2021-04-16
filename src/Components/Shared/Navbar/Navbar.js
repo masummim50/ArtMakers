@@ -20,9 +20,6 @@ const Navbar = () => {
                 <Link to='/' class="nav-link active" aria-current="page">Home</Link>
               </li>
               <li class="nav-item ms-3">
-                <Link to='/addservice' class="nav-link" href="#jackets">Add Service</Link>
-              </li>
-              <li class="nav-item ms-3">
                 <Link to='/dashboard' class="nav-link" href="#about">Dashboard</Link>
               </li>
               <li class="nav-item ms-3">

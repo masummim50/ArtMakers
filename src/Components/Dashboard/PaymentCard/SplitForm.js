@@ -39,7 +39,6 @@ const SplitForm = ({order}) => {
 
   const handleSubmit = async event => {
     event.preventDefault();
-    console.log(order)
     if (!stripe || !elements) {
       // Stripe.js has not loaded yet. Make sure to disable
       // form submission until Stripe.js has loaded.
@@ -52,12 +51,20 @@ const SplitForm = ({order}) => {
     });
     console.log("[PaymentMethod]", payload);
     console.log(payload.paymentMethod)
-    const completeOrder = {...order, cardType: payload.paymentMethod.card.brand, country: payload.paymentMethod.card.country, orderPlacedOn: new Date()}
+    if(payload.paymentMethod){
+    const completeOrder = {...order, orderStatus: 'pending', cardType: payload.paymentMethod.card.brand, country: payload.paymentMethod.card.country, orderPlacedOn: new Date()}
     console.log(completeOrder)
+      fetch('http://localhost:5000/addorder', {
+        method:'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(completeOrder)
+      })
+
+    }else{return false;}
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="stripeform">
       <label className='w-100'>
         Card number
         <CardNumberElement
