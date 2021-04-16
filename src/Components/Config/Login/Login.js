@@ -5,6 +5,7 @@ import Navbar from '../../Shared/Navbar/Navbar';
 import { firebaseConfig } from '../firebaseConfig/firebaseConfig';
 import { userContext } from '../../../App';
 import { useHistory, useLocation } from 'react-router';
+import login from '../../../images/login.jpg'
 
 const Login = () => {
   if(firebase.apps.length === 0){
@@ -33,7 +34,27 @@ const Login = () => {
   return (
     <div>
       <Navbar></Navbar>
-      <button onClick={handleGoogleSignIn} className="btn btn-danger">Login with gmail</button>
+      <div className="container">
+        <div className="row">
+          
+          <div className="col-md-6 p-5">
+          {
+            loggedInUser.email ? <h2 className="text-success">Your are logged in</h2> : <>
+            <input type="text" name="email" placeholder="Enter Your Email" id="" className="mb-4 form-control"/>
+            <input type="text" name="password" placeholder="Password" id="" className="mb-4 form-control"/>
+            <input disabled type="button" name="password" value="Log In" id="" className="btn btn-success mb-4 form-control"/>
+            <h4 className="text-center mb-4">Or</h4>
+            <button onClick={handleGoogleSignIn} className="btn btn-danger form-control">Login with gmail</button>
+            </>
+          }
+            
+            
+          </div>
+          <div className="col-md-6">
+            <img src={login} alt="" className="img-fluid"/>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

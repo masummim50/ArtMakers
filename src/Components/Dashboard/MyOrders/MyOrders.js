@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { userContext } from '../../../App';
+import MySingleOrder from './MySingleOrder'
 
 const MyOrders = () => {
   const [loggedInUser, setLoggedInUser] = useContext(userContext);
@@ -16,8 +17,9 @@ const MyOrders = () => {
   },[])
   return (
     <div>
-      this is orders for only users
-      {myorders.length}
+      {
+        myorders.map(singleorder => <MySingleOrder singleorder={singleorder}></MySingleOrder>)
+      }
     </div>
   );
 };

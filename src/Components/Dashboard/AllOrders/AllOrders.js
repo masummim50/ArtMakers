@@ -10,8 +10,6 @@ const AllOrders = () => {
   },[])
   return (
     <div>
-      this is orders page for admins
-      <h2>Total orders {allorders.length}</h2>
       {
         allorders.map(singleorder=> <SingleOrder singleorder={singleorder}></SingleOrder>)
       }

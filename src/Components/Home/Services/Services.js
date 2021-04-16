@@ -9,15 +9,15 @@ const Services = () => {
     .then(data => setServices(data))
   },[])
   return (
+    <div>
+      <div className="bg-dark"><h2 className="text-white text-center p-5">Our Services</h2></div>
     <div className="container">
-      Our services
-      <h2>{services.length}</h2>
       <div className="row mb-5">
         {
           services.map(singleService => <SingleService singleService={singleService}></SingleService>)
         }
       </div>
-    </div>
+    </div></div>
   );
 };
 

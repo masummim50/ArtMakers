@@ -2,8 +2,8 @@ import React from 'react';
 
 const SingleReview = ({singlereview}) => {
   return (
-    <div className="col-md-3">
-      <div className="shadow p-3">
+    <div className="col-md-3 mb-3">
+      <div className="shadow p-3 bg-light rounded">
         
       <div className="d-flex flex-column align-items-center">
         <img src={singlereview.reviewerImage} style={{borderRadius:'50%', height:'50px', width:'50px'}} alt=""/>

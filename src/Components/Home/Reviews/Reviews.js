@@ -9,14 +9,15 @@ const Reviews = () => {
     .then(data => setReviews(data))
   },[])
   return (
+    <div className="bg-dark mt-5">
     <div className='container'>
-      <h2>Theres a total of {reviews.length} review</h2>
+      <h2 className="text-center text-white p-4">Customer Reviews</h2>
       <div className="row">
       {
         reviews.map(singlereview => <SingleReview singlereview={singlereview}></SingleReview>)
       }
       </div>
-    </div>
+    </div></div>
   );
 };
 

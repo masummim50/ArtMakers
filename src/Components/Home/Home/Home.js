@@ -5,6 +5,8 @@ import ChooseUs from '../ChooseUs/ChooseUs';
 import HeaderMain from '../HeaderMain/HeaderMain';
 import Reviews from '../Reviews/Reviews';
 import Services from '../Services/Services';
+import Footer from '../../Shared/Footer/Footer'
+import Examples from '../Examples/Examples';
 
 const Home = () => {
   const [loggedInUser, setLoggedInUser, admin, setAdmin] = useContext(userContext);
@@ -15,7 +17,9 @@ const Home = () => {
       <HeaderMain></HeaderMain>
       <Services></Services>
       <ChooseUs></ChooseUs>
+      <Examples></Examples>
       <Reviews></Reviews>
+      <Footer></Footer>
     </div>
   );
 };
