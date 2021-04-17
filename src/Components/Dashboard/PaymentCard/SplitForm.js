@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useState } from "react";
 import {
   useStripe,
   useElements,
@@ -7,7 +7,6 @@ import {
   CardExpiryElement
 } from "@stripe/react-stripe-js";
 import { useHistory } from "react-router";
-import { useState } from "react/cjs/react.development";
 
 
 const useOptions = () => {
