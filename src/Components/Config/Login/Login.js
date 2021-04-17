@@ -12,7 +12,7 @@ const Login = () => {
     firebase.initializeApp(firebaseConfig);
   }
   useEffect(()=> {
-    fetch('http://localhost:5000/admins')
+    fetch('https://frozen-dawn-42451.herokuapp.com/admins')
     .then(res => res.json())
     .then(data => setAdmin(data))
   },[])

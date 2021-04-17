@@ -3,7 +3,7 @@ import React from 'react';
 const SingleServiceForAdmin = ({singleservice}) => {
   const deleteservice = e => {
     console.log(singleservice._id)
-    fetch(`http://localhost:5000/services/delete/${singleservice._id}`, {
+    fetch(`https://frozen-dawn-42451.herokuapp.com/services/delete/${singleservice._id}`, {
       method:'DELETE'
     })
     e.target.parentNode.parentNode.parentNode.innerHTML = ''

@@ -4,13 +4,13 @@ import SingleService from '../SingleService/SingleService';
 const Services = () => {
   const [services, setServices] = useState([]);
   useEffect(()=>{
-    fetch('http://localhost:5000/services')
+    fetch('https://frozen-dawn-42451.herokuapp.com/services')
     .then(res => res.json())
     .then(data => setServices(data))
   },[])
   return (
     <div>
-      <div className="bg-dark"><h2 className="text-white text-center p-5">Our Services</h2></div>
+      <div className="bg-dark"><h2 className="brand-text text-center p-3">Our Services</h2></div>
     <div className="container">
       <div className="row mb-5">
         {

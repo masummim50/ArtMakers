@@ -8,7 +8,7 @@ const ChooseUs = () => {
     <div className="bg-dark">
     <div className="container">
       <div className="text-center">
-        <h3 className="text-white text-center p-4">Why Choose Us</h3>
+        <h3 className="brand-text text-center p-4">Why Choose Us</h3>
       </div>
       <div className="row">
         

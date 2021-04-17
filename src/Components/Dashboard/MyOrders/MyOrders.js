@@ -6,7 +6,7 @@ const MyOrders = () => {
   const [loggedInUser, setLoggedInUser] = useContext(userContext);
   const [myorders, setMyOrders] = useState([]);
   useEffect(()=>{
-    fetch(`http://localhost:5000/allorders`)
+    fetch(`https://frozen-dawn-42451.herokuapp.com/allorders`)
     .then(res => res.json())
     .then(data => {
       const filtered = data.filter(d => d.buyerEmail === loggedInUser.email)
@@ -16,7 +16,7 @@ const MyOrders = () => {
     })
   },[])
   return (
-    <div>
+    <div className="p-5">
       {
         myorders.map(singleorder => <MySingleOrder singleorder={singleorder}></MySingleOrder>)
       }

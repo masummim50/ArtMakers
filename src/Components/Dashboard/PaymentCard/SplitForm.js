@@ -6,6 +6,8 @@ import {
   CardCvcElement,
   CardExpiryElement
 } from "@stripe/react-stripe-js";
+import { useHistory } from "react-router";
+import { useState } from "react/cjs/react.development";
 
 
 const useOptions = () => {
@@ -33,9 +35,16 @@ const useOptions = () => {
 };
 
 const SplitForm = ({order}) => {
+  const [paid, setPaid] = useState(false);
   const stripe = useStripe();
   const elements = useElements();
   const options = useOptions();
+  const showpaid = ()=> {
+    setPaid(true);
+    setTimeout(() => {
+      setPaid(false)
+    }, 5000);
+  }
 
   const handleSubmit = async event => {
     event.preventDefault();
@@ -49,16 +58,19 @@ const SplitForm = ({order}) => {
       type: "card",
       card: elements.getElement(CardNumberElement)
     });
+    const date = new Date();
+    const datestring = date.toDateString()
     console.log("[PaymentMethod]", payload);
     console.log(payload.paymentMethod)
     if(payload.paymentMethod){
-    const completeOrder = {...order, orderStatus: 'pending', cardType: payload.paymentMethod.card.brand, country: payload.paymentMethod.card.country, orderPlacedOn: new Date()}
+    const completeOrder = {...order, orderStatus: 'pending', cardType: payload.paymentMethod.card.brand, country: payload.paymentMethod.card.country, orderPlacedOn: datestring}
     console.log(completeOrder)
-      fetch('http://localhost:5000/addorder', {
+      fetch('https://frozen-dawn-42451.herokuapp.com/addorder', {
         method:'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(completeOrder)
       })
+      showpaid()
 
     }else{return false;}
   };
@@ -125,6 +137,7 @@ const SplitForm = ({order}) => {
       <button type="submit" disabled={!stripe}>
         Pay
       </button>
+      {paid && <h3 className="text-success">Order placed Successfully</h3> }
     </form>
   );
 };

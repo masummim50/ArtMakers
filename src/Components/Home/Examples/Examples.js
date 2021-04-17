@@ -1,7 +1,10 @@
 import React from 'react';
-import bg1 from '../../../images/bg1.jpg';
-import bg2 from '../../../images/bg2.jpg';
-import bg3 from '../../../images/bg3.jpg';
+import ex1 from '../../../images/ex1.jpg';
+import ex2 from '../../../images/ex2.jpg';
+import ex3 from '../../../images/ex3.jpg';
+import ex4 from '../../../images/ex4.jpg';
+import ex5 from '../../../images/ex5.jpg';
+import ex6 from '../../../images/ex6.jpg';
 import delivery from '../../../images/delivery.jpg';
 import login from '../../../images/login.jpg'
 
@@ -9,41 +12,48 @@ import login from '../../../images/login.jpg'
 const Examples = () => {
   return (
     <>
-    <div className="bg-dark text-center mt-5 p-2"><h2 className="text-white">Examples of our work</h2></div>
+    <div className="bg-dark text-center mt-5 p-2"><h2 className="brand-text">Examples of our work</h2></div>
     <div id="carouselExampleControls" class="carousel slide mt-1" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
       <div className="row" style={{height:"300px"}}>
         <div className="col-md-8 offset-md-2 d-flex justify-content-center">
-          <img className="just" style={{height:'300px'}} src={bg1} alt=""/>
+          <img className="just" style={{height:'300px'}} src={ex1} alt=""/>
         </div>
       </div>
     </div>
     <div class="carousel-item">
       <div className="row" style={{height:"300px"}}>
         <div className="col-md-8 offset-md-2 d-flex justify-content-center">
-          <img className="just" style={{height:'300px'}} src={bg2} alt=""/>
+          <img className="just" style={{height:'300px'}} src={ex2} alt=""/>
         </div>
       </div>
     </div>
     <div class="carousel-item">
       <div className="row" style={{height:"300px"}}>
         <div className="col-md-8 offset-md-2 d-flex justify-content-center">
-          <img className="just" style={{height:'300px'}} src={bg3} alt=""/>
+          <img className="just" style={{height:'300px'}} src={ex3} alt=""/>
         </div>
       </div>
     </div>
     <div class="carousel-item">
       <div className="row" style={{height:"300px"}}>
         <div className="col-md-8 offset-md-2 d-flex justify-content-center">
-          <img className="just" style={{height:'300px'}} src={delivery} alt=""/>
+          <img className="just" style={{height:'300px'}} src={ex4} alt=""/>
         </div>
       </div>
     </div>
     <div class="carousel-item">
       <div className="row" style={{height:"300px"}}>
         <div className="col-md-8 offset-md-2 d-flex justify-content-center">
-          <img className="just" style={{height:'300px'}} src={login} alt=""/>
+          <img className="just" style={{height:'300px'}} src={ex5} alt=""/>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div className="row" style={{height:"300px"}}>
+        <div className="col-md-8 offset-md-2 d-flex justify-content-center">
+          <img className="just" style={{height:'300px'}} src={ex6} alt=""/>
         </div>
       </div>
     </div>

@@ -11,7 +11,7 @@ const ChosenService = () => {
   const {id} = useParams();
   const [chosenservice, setChosenService] = useState({});
   useEffect(()=> {
-    fetch('http://localhost:5000/services')
+    fetch('https://frozen-dawn-42451.herokuapp.com/services')
     .then(res => res.json())
     .then(data => {
       const chosenOne = data.find(eachdata => eachdata._id === id)

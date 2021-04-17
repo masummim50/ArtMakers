@@ -16,24 +16,25 @@ const HeaderMain = () => {
     <div class="carousel-item active" data-bs-interval="10000">
       <div className="row p-5">
         <div className="col-md-6 p-5 d-flex flex-column justify-content-center">
-        <h5>First slide label</h5>
-        <p>Some representative placeholder content for the first slide.</p></div>
+        <h2 className="blue">Interactive environment design</h2>
+        <p className="orange">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus est sapiente reprehenderit incidunt mollitia blanditiis.</p></div>
         <div className="col-md-6"><img src={bg1} class="d-block w-100 img-fluid header-img" alt="..."/></div>
       </div>
     </div>
     <div class="carousel-item" data-bs-interval="2000">
     <div className="row p-5">
         <div className="col-md-6 p-5 d-flex flex-column justify-content-center">
-        <h5>First slide label</h5>
-        <p>Some representative placeholder content for the first slide.</p></div>
+        <h2 className="blue">Abstract Color Painting</h2>
+        <p className="orange">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati itaque vel dolores explicabo, voluptatibus distinctio?</p></div>
         <div className="col-md-6"><img src={bg2} class="d-block w-100 img-fluid header-img" alt="..."/></div>
       </div>
     </div>
     <div class="carousel-item">
     <div className="row p-5">
         <div className="col-md-6 p-5 d-flex flex-column justify-content-center">
-        <h5>First slide label</h5>
-        <p>Some representative placeholder content for the first slide.</p></div>
+          <h2 className="blue">Scribble wall paint</h2>
+          <p className="orange">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi tempora iusto similique! Laborum, nobis laudantium!</p>
+        </div>
         <div className="col-md-6"><img src={bg3} class="d-block w-100 img-fluid header-img" alt="..."/></div>
       </div>
     </div>

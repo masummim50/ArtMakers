@@ -1,0 +1,14 @@
+.sidebar{
+  background-color: orange;
+  height: 100vh;
+  margin:0;
+  position:fixed;
+}
+
+
+@media only screen and (max-width: 767px) {
+  .sidebar {
+    position:relative;
+  }
+
+}

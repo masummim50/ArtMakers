@@ -4,12 +4,12 @@ import SingleOrder from './SingleOrder';
 const AllOrders = () => {
   const [allorders, setAllorders] = useState([]);
   useEffect(()=> {
-    fetch('http://localhost:5000/allorders')
+    fetch('https://frozen-dawn-42451.herokuapp.com/allorders')
   .then(res => res.json())
   .then(data => setAllorders(data))
   },[])
   return (
-    <div>
+    <div className='p-5'>
       {
         allorders.map(singleorder=> <SingleOrder singleorder={singleorder}></SingleOrder>)
       }

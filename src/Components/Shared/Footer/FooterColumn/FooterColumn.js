@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const FooterColumn = (props) => {
   return (
@@ -8,7 +9,7 @@ const FooterColumn = (props) => {
       }
       <ul className="list-unstyled">
         {
-          props.menuItems.map(item => <li><a className="text-decoration-none text-white" href={item.link}>{item.name}</a></li>)
+          props.menuItems.map(item => <li><Link className="text-decoration-none text-white" to={item.link}>{item.name}</Link></li>)
         }
       </ul>
     </div>

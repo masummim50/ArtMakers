@@ -8,7 +8,7 @@ const ReviewForm = () => {
     const review = {review:  document.getElementById('reviewcontent').value, reviewBy: loggedInUser.displayName, reviewerImage: loggedInUser.photoURL, reviewerEmail: loggedInUser.email};
     console.log(loggedInUser)
     console.log(review)
-    fetch('http://localhost:5000/addreview', {
+    fetch('https://frozen-dawn-42451.herokuapp.com/addreview', {
       method: 'POST', 
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(review)
