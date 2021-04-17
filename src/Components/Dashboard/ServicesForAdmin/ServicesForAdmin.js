@@ -3,7 +3,7 @@ import { useState } from 'react/cjs/react.development';
 import SingleServiceForAdmin from './SingleServiceForAdmin';
 
 const ServicesForAdmin = () => {
-  const [services, setServices] = useState([])
+  const [services, setServices] = useState([]);
   useEffect(()=> {
     fetch('https://frozen-dawn-42451.herokuapp.com/services')
     .then(res => res.json())
