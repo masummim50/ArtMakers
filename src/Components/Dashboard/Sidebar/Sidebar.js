@@ -21,7 +21,7 @@ const Sidebar = () => {
           {
             isAdmin && <>
           <div className="mb-3"><Link className="text-white text-decoration-none" to={`${url}/addservice`}>Add Service</Link></div>
-          <div className="mb-3"><Link className="text-white text-decoration-none" to={`${url}/services`}>Services</Link></div>
+          <div className="mb-3"><Link className="text-white text-decoration-none" to={`${url}/servicesadmin`}>Services</Link></div>
           <div className="mb-3"><Link className="text-white text-decoration-none" to={`${url}/addadmin`}>Add Admin</Link></div>
           <div className="mb-3"><Link className="text-white text-decoration-none" to={`${url}/allorders`}>All Orders</Link></div>
           </>

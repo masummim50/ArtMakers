@@ -26,7 +26,7 @@ const Dashboard = () => {
             <Route path={`${path}/addservice`}>
               <AddService></AddService>
             </Route>
-            <Route path={`${path}/services`}>
+            <Route path={`${path}/servicesadmin`}>
               <ServicesForAdmin></ServicesForAdmin>
             </Route>
             <Route path={`${path}/review`}>
